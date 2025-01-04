@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 1024px;
+}
+
+.toolbarContainer {
+  display: flex;
+  gap: 15px;
+}
+
+.filterName {
+  padding: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.projects {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.active {
+  background-color: rgb(70, 70, 70);
+  color: white;
+}
