@@ -1,26 +1,7 @@
 import './App.css';
 import React from 'react';
-
-class Toolbar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className="toolbarContainer">
-        {this.props.filters.map(filter => (
-          <div
-            className={`filterName ${filter === this.props.selected ? 'active' : ''}`}
-            onClick={() => this.props.onSelectFilter(filter)}
-          >
-            {filter}
-          </div>
-        ))}
-      </div>
-    );
-  }
-}
+import Toolbar from './Toolbar';
+import ProjectList from './ProjectList';
 
 class App extends React.Component {
   constructor(props) {
@@ -103,23 +84,6 @@ class App extends React.Component {
           onSelectFilter={this.handleFilterSelect}
         />
         <ProjectList projects={filteredProjects} />
-      </div>
-    );
-  }
-}
-
-class ProjectList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div className='projects'>
-        {this.props.projects.map(project => (
-          <div className='projectItem'>
-            <img src={project.img} />
-          </div>
-        ))}
       </div>
     );
   }
